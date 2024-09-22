@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input,
+select {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Grilla de arte */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr 1fr;;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos para las tarjetas de arte */
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Sección de paginación */
+#pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pagination button {
+    margin: 0 5px;
+}
+
+/* Sección de imágenes adicionales */
+#imgExtras {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#imgExtrasContainer img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Botón de volver en imágenes adicionales */
+#imgExtras button {
+    margin-bottom: 20px;
+    background-color: #dc3545;
+}
+
+#imgExtras button:hover {
+    background-color: #c82333;
+}
+
+select {
+    margin: 5px 0;
+    padding: 5px;
+    width: 200px;
+    /* Ajusta el ancho si es necesario */
+}

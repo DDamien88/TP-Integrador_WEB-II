@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TP Integrador - WEB II</title>
+</head>
+
+<body>
+
+    <h1>Galería de Arte del Museo Metropolitano</h1>
+
+    <!-- Selector de departamento -->
+    <label for="departamentoSelect">Seleccionar departamento:</label>
+    <select id="departamentoSelect">
+        <option value="">Seleccione departamento</option>
+    </select>
+
+    <!-- Input de palabra clave -->
+    <label for="claveInput">Palabra clave:</label>
+    <input type="text" id="claveInput" list="sugerencias" placeholder="Buscar por palabra clave...">
+    <datalist id="sugerencias">
+        <option value="painting">
+        <option value="sculpture">
+        <option value="19th century">
+        <option value="Vincent van Gogh">
+        <option value="oil on canvas">
+        <option value="Impressionism">
+        <option value="Cubism">
+    </datalist>
+
+    <!-- Input de ubicación
+    <label for="locationInput">Ubicación geográfica:</label>
+    <input type="text" id="locationInput" placeholder="Buscar por ubicación..."> -->
+
+    <label for="locationSelect">Ubicación geográfica:</label>
+    <select id="locationSelect">
+        <option value="" selected>Seleccione ubicación</option>
+    </select>
+
+    <!-- Botón para iniciar búsqueda -->
+    <button id="botonBuscar">Buscar</button>
+
+    <!-- Grilla para mostrar los resultados -->
+    <div id="artGrid" class="grid"></div>
+
+    <!-- Sección de paginación -->
+    <div id="pagination">
+        <button class="hidden" id="prevBoton">Anterior</button>
+        <button class="hidden" id="nextBoton">Siguiente</button>
+    </div>
+    
+
+    <!-- Sección de imágenes adicionales (oculta por defecto) -->
+    <div id="imgExtras" class="hidden">
+        <h2>Imágenes adicionales</h2>
+        <!-- <button onclick="volverAtras()">Volver</button> -->
+        <button id="volverBtn">Volver</button>
+        <div id="imgExtrasContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
