@@ -123,9 +123,9 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                             <p>Cultura: ${objData.culture || 'Desconocido'}</p>
                             <p>Dinastia: ${objData.dynasty || 'Desconocida'}</p>
                         `;
-                    // Crear imagen principal con fallback si la imagen no está disponible
+                    
                     const img = document.createElement('img');
-                    img.src = objData.primaryImageSmall || 'img/imagen_deafult.jpg';  // Imagen por defecto si no hay imagen
+                    img.src = objData.primaryImageSmall || './img/deafult.jpg';  // Imagen por defecto si no hay imagen
                     img.alt = objData.title;
                     img.title = objData.objectDate || 'Fecha desconocida';
 
