@@ -14,19 +14,17 @@ app.listen(port, () => {
 });*/
 
 const express = require('express');
-const path = require('path');
 const app = express();
+const path = require('path');
 
-app.use(express.static('public'));  // Servir archivos estáticos
+// Servir archivos estáticos
+app.use(express.static('public'));
 
+// Ruta principal
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    res.sendFile(path.join(__dirname, 'public', 'styles.css'));
-    res.sendFile(path.join(__dirname, 'public', 'script.js'));
 });
 
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
-
-module.exports = app;
