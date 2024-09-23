@@ -28,7 +28,7 @@ fetch(`${API_BASE_URL}/departments`)
         const departamentoSelect = document.getElementById('departamentoSelect');
         data.departments.forEach(deptos => {
             let option = document.createElement('option');
-            option.value = deptos.departmentId;  // CORREGIDO: Cambia a 'departmentId' (no 'departamentId')
+            option.value = deptos.departmentId;
             option.text = deptos.displayName;
             departamentoSelect.appendChild(option);
         });
@@ -56,26 +56,14 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
     e.preventDefault();
     paginaActual = 1;  // Reinicia a la primera página en cada búsqueda
     const departamento = document.getElementById('departamentoSelect').value;
-    //const clave = document.getElementById('claveInput').value;
     const clave = document.getElementById('claveInput').value || 'art';
 
     const location = document.getElementById('locationSelect').value;
 
-    //OPCIONAL - https://collectionapi.metmuseum.org/public/collection/v1/search?q=&hasImages=true
-    //let searchUrl = `${API_BASE_URL}/search?hasimages=true&q=${clave}`;
     let searchUrl = `${API_BASE_URL}/search?q=${clave}&hasImages=true`;
     if (departamento) searchUrl += `&departmentId=${departamento}`;
     if (location) searchUrl += `&geoLocation=${location}`;
 
-    //console.log("URL de búsqueda:", searchUrl);
-
-    /*fetch(searchUrl)
-        .then(response => response.json())
-        .then(data => {
-            resultTotal = data.objectIDs || [];  // Almacena todos los IDs de objetos recuperados
-            muestraPag(paginaActual);  // Muestra la primera página
-        });
-});*/
 
     //.slice(0, 20)
     fetch(searchUrl)
@@ -104,44 +92,6 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
         botonesPaginacion();  // Actualiza los botones de paginación
     }
 
-    /*function mostrarObjetos(objectIds) {
-        const grid = document.getElementById('artGrid');
-        grid.innerHTML = ''; // Limpia la grilla antes de mostrar nuevos resultados
-
-        objectIds.forEach(id => {
-            fetch(`${API_BASE_URL}/objects/${id}`)
-                .then(response => response.json())
-                .then(objData => {
-                    const card = document.createElement('div');
-                    card.className = 'card';
-
-                    // Información del objeto de arte
-                    card.innerHTML = `
-                        <h3>${objData.title}</h3>
-                        <p>${objData.culture || 'Desconocido'}</p>
-                        <p>${objData.dynasty || 'Desconocida'}</p>
-                    `;
-
-                    // Imagen principal
-                    const img = document.createElement('img');
-                    img.src = objData.primaryimagesmall || 'ruta/a/imagen_default.png';
-                    img.alt = objData.title;
-                    img.title = objData.objectDate || 'Fecha desconocida';
-                    card.appendChild(img);
-
-                    // Botón para ver imágenes adicionales
-                    if (objData.additionalimages && objData.additionalimages.length > 0) {
-                        const botonMasImg = document.createElement('button');
-                        botonMasImg.textContent = 'Ver más imágenes';
-                        botonMasImg.onclick = function () {
-                            muestraMasImg(objData.additionalimages);
-                        };
-                        card.appendChild(botonMasImg);
-                    }
-                    grid.appendChild(card);
-                });
-        });
-    }*/
 
     function mostrarObjetos(objectIds) {
         const grid = document.getElementById('artGrid');
@@ -161,7 +111,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                     return response.json();
                 })
                 .then(objData => {
-                    //console.log("Datos del objeto:", objData);  // Para depurar los datos recibidos
+
 
                     // Crear tarjeta para mostrar la información del objeto
                     const card = document.createElement('div');
@@ -180,10 +130,6 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                     img.alt = objData.title;
                     img.title = objData.objectDate || 'Fecha desconocida';
 
-                    // Verificar si la URL de la imagen es válida
-                    /*img.onerror = function () {
-                        this.src = 'img/imagen_default.png';  // Reemplaza por una imagen predeterminada si hay error
-                    };*/
 
                     card.appendChild(img);
 
@@ -235,28 +181,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
 
     function botonesPaginacion() {
         const paginacionContainer = document.getElementById('pagination');
-        paginacionContainer.innerHTML = '';  // Limpia los botones de paginación previos
-
-        /*if (paginaActual > 1) {
-            const prevBoton = document.createElement('button');
-            prevBoton.textContent = 'Anterior';
-            prevBoton.onclick = function () {
-                paginaActual--;
-                muestraPag(paginaActual);
-            };
-            paginacionContainer.appendChild(prevBoton);
-        }
-
-        if (paginaActual * resultPorPaginas < resultTotal.length) {
-            const botonSiguiente = document.createElement('button');
-            botonSiguiente.textContent = 'Siguiente';
-            botonSiguiente.onclick = function () {
-                paginaActual++;
-                muestraPag(paginaActual);
-            };
-            paginacionContainer.appendChild(botonSiguiente);
-        }
-    }*/
+        paginacionContainer.innerHTML = '';  // Limpia los botones de paginación previos   
 
         if (paginaActual > 1) {
             var prevBoton = document.createElement('button');
