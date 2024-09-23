@@ -21,6 +21,8 @@ app.use(express.static('public'));  // Servir archivos estáticos
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'styles.css'));
+    res.sendFile(path.join(__dirname, 'public', 'script.js'));
 });
 
 app.listen(3000, () => {
