@@ -27,6 +27,12 @@ button {
     cursor: pointer;
 }
 
+.botonMasImg{
+    color: #ffffff;
+    background-color: rgb(105, 104, 103);
+    border-radius: 5px;
+}
+
 button:hover {
     background-color: #0056b3;
 }

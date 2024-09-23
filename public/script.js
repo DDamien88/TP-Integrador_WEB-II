@@ -123,7 +123,6 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                             <p>Cultura: ${objData.culture || 'Desconocido'}</p>
                             <p>Dinastia: ${objData.dynasty || 'Desconocida'}</p>
                         `;
-
                     // Crear imagen principal con fallback si la imagen no está disponible
                     const img = document.createElement('img');
                     img.src = objData.primaryImageSmall || 'img/imagen_deafult.jpg';  // Imagen por defecto si no hay imagen
@@ -137,6 +136,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                     if (objData.additionalImages && objData.additionalImages.length > 0) {
                         const botonMasImg = document.createElement('button');
                         botonMasImg.textContent = 'Ver más imágenes';
+                        botonMasImg.className = 'botonMasImg';
                         botonMasImg.onclick = function () {
                             muestraMasImg(objData.additionalImages);
                         };
@@ -149,7 +149,9 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                 console.error('Error al obtener los datos del objeto:', error);
             });*/
         });
+
     }
+
 
 
     function muestraMasImg(images) {
@@ -204,4 +206,5 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
             paginacionContainer.appendChild(botonSiguiente);
         }
     }
-});         
+});
+
