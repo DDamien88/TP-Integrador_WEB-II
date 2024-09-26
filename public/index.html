@@ -4,46 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/ny.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>TP Integrador - WEB II</title>
 </head>
 
 <body>
+    <div class="fondo">
+        <h1>Galería de Arte del Museo Metropolitano de NY</h1>
 
-    <h1>Galería de Arte del Museo Metropolitano de NY</h1>
+        <form class="formulario">
+            <!-- Selector de departamento -->
+            <label for="departamentoSelect">Seleccionar departamento:</label>
+            <select id="departamentoSelect">
+                <option value="">Todos los departamentos</option>
+            </select>
 
-    <form class="formulario">
-        <!-- Selector de departamento -->
-        <label for="departamentoSelect">Seleccionar departamento:</label>
-        <select id="departamentoSelect">
-            <option value="">Seleccione departamento</option>
-        </select>
+            <!-- Input de palabra clave -->
+            <label for="claveInput">Palabra clave:</label>
+            <input type="text" id="claveInput" list="sugerencias" placeholder="Buscar por palabra clave...">
+            <datalist id="sugerencias">
+                <option value="Pinturas">
+                <option value="Esculturas">
+                <option value="Siglo XIX">
+                <option value="Vincent van Gogh">
+                <option value="oil on canvas">
+                <option value="Impresionismo">
+                <option value="Cubismo">
+            </datalist>
 
-        <!-- Input de palabra clave -->
-        <label for="claveInput">Palabra clave:</label>
-        <input type="text" id="claveInput" list="sugerencias" placeholder="Buscar por palabra clave...">
-        <datalist id="sugerencias">
-            <option value="painting">
-            <option value="sculpture">
-            <option value="19th century">
-            <option value="Vincent van Gogh">
-            <option value="oil on canvas">
-            <option value="Impressionism">
-            <option value="Cubism">
-        </datalist>
-
-        <!-- Input de ubicación
+            <!-- Input de ubicación
     <label for="locationInput">Ubicación geográfica:</label>
     <input type="text" id="locationInput" placeholder="Buscar por ubicación..."> -->
 
-        <label for="locationSelect">Ubicación geográfica:</label>
-        <select id="locationSelect">
-            <option value="" selected>Seleccione ubicación</option>
-        </select>
+            <label for="locationSelect">Ubicación geográfica:</label>
+            <select id="locationSelect">
+                <option value="" selected>Seleccione ubicación</option>
+            </select>
 
-        <!-- Botón para iniciar búsqueda -->
-        <button class="btnBuscar" id="botonBuscar">Buscar</button>
-    </form>
+            <!-- Botón para iniciar búsqueda -->
+            <button class="btnBuscar" id="botonBuscar">Buscar</button>
+        </form>
+    </div>
 
     <!-- Grilla para mostrar los resultados -->
     <div id="artGrid" class="grid"></div>
