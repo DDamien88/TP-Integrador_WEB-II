@@ -1,5 +1,5 @@
 const API_BASE_URL = 'https://collectionapi.metmuseum.org/public/collection/v1';
-let paginaActual = 1;  // Página inicial
+let paginaActual = 1;
 const resultPorPaginas = 20;  // Número de resultados por página
 let resultTotal = [];  // Almacena todos los IDs de objetos recuperados
 
@@ -95,7 +95,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
     function mostrarObjetos(objectIds) {
         const grid = document.getElementById('artGrid');
         grid.innerHTML = '';  // Limpiar la grilla antes de mostrar nuevos resultados
-    
+
         objectIds.forEach(id => {
             fetch(`/translate-object/${id}`)  // Obtener datos por ID
                 .then(response => {
@@ -107,14 +107,14 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                 .then(objData => {
                     const card = document.createElement('div');
                     card.className = 'card';
-    
+
                     // Crear la tarjeta con los datos traducidos
                     card.innerHTML = `
                         <h3>${objData.title || 'Desconocido'}</h3>
                         <p>Cultura: ${objData.culture || 'Desconocida'}</p>
                         <p>Dinastía: ${objData.dynasty || 'Desconocida'}</p>
                     `;
-    
+
                     // Añadir imagen principal si existe
                     if (objData.primaryImageSmall) {
                         const img = document.createElement('img');
@@ -123,7 +123,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                         img.title = objData.objectDate || 'Fecha desconocida';
                         card.appendChild(img);
                     }
-    
+
                     // Añadir botón para ver imágenes adicionales si existen
                     if (objData.additionalImages && objData.additionalImages.length > 0) {
                         const botonMasImg = document.createElement('button');
@@ -133,7 +133,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                         };
                         card.appendChild(botonMasImg);
                     }
-    
+
                     grid.appendChild(card);
                 })
                 .catch(error => {
@@ -141,7 +141,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
                 });
         });
     }
-    
+
 
     //2 opción de la function
     // function mostrarObjetos(objectIds) {
@@ -353,7 +353,7 @@ document.getElementById('botonBuscar').addEventListener('click', (e) => {
     function muestraMasImg(images) {
         const imgExtrasSeccion = document.getElementById('imgExtras');
         const imgExtrasContainer = document.getElementById('imgExtrasContainer');
-        const prevBoton = document.getElementById('prevBoton');
+const prevBoton = document.getElementById('prevBoton');
         const nextBoton = document.getElementById('nextBoton');
         // Limpia el contenedor de imágenes adicionales antes de mostrar nuevas imágenes
         imgExtrasContainer.innerHTML = '';
