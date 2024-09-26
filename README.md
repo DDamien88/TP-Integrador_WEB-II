@@ -54,4 +54,5 @@ Es un framework web transigente, escrito en JavaScript y alojado dentro del ento
 
 ## Explore la app
 
-[[https://tp-integrador-web-2.vercel.app/](https://tp-integrador-web-2.vercel.app/)](https://tp-integrador-web-2-4inqkqyx8-damians-projects-cbb77e07.vercel.app/)
+https://tp-integrador-web-2-4inqkqyx8-damians-projects-cbb77e07.vercel.app/
+
